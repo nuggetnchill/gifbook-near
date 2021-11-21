@@ -15,6 +15,13 @@ export default function Form({ onSubmit, currentUser }) {
             id="message"
             required
           />
+          <label htmlFor="gif">Your favorite gif:</label>
+          <input
+            autoComplete="off"
+            autoFocus
+            id="gif"
+            required
+          />
         </p>
         <p>
           <label htmlFor="donation">Donation (optional):</label>

@@ -11,8 +11,9 @@
     "dev": "yarn build:contract:debug && near dev-deploy && nodemon --watch assembly -e ts --exec yarn dev:start",
     "lint": "eslint \"./**/*.js\" \"./**/*.jsx\"",
     "start": "yarn deploy && parcel src/index.html",
-    "dev:start": "env-cmd -f ./neardev/dev-account.env parcel src/index.html",
-    "test": "yarn build:contract:debug && asp && jest"
+    "dev:start": "nodemon --watch assemby -e ts --exec env-cmd -f ./neardev/dev-account.env parcel src/index.html",
+    "test": "yarn build:contract:debug && asp && jest",
+    "test:contract":"yarn build:contract:debug && asp"
   },
   "devDependencies": {
     "@babel/core": "^7.14.0",

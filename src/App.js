@@ -20,7 +20,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    const { fieldset, message, donation } = e.target.elements;
+    const { fieldset, message, donation, gif } = e.target.elements;
 
     fieldset.disabled = true;
 
@@ -28,7 +28,9 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
     // update blockchain data in background
     // add uuid to each message, so we know which one is already known
     contract.addMessage(
-      { text: message.value },
+      { text: message.value,
+        gif: gif.value,
+      },
       BOATLOAD_OF_GAS,
       Big(donation.value || '0').times(10 ** 24).toFixed()
     ).then(() => {
@@ -41,7 +43,6 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
       });
     });
   };
-
   const signIn = () => {
     wallet.requestSignIn(
       nearConfig.contractName,
@@ -57,7 +58,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
   return (
     <main>
       <header>
-        <h1>NEAR Guest Book</h1>
+        <h1>NEAR GIF Book</h1>
         { currentUser
           ? <button onClick={signOut}>Log out</button>
           : <button onClick={signIn}>Log in</button>

@@ -115,8 +115,42 @@ button {
   }
 }
 
+.messages-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  min-width: fit-content;
+  margin-left: -200px;
+}
+
+.yeet-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  background-color: rgb(6 4 175 / 18%);
+  border-radius: 15px;
+}
+
+.yeet-container > *{
+  margin: 5px 0;
+}
+
+img {
+  max-width: 300px;
+}
+
+.time-stamp{
+  font-size: 15px;
+  color:var(--gray);
+}
+
 .is-premium {
-  border-left: 0.25em solid var(--secondary);
-  padding-left: 0.25em;
-  margin-left: -0.5em;
+  border: 3px solid #d8ff00;
+}
+
+.account-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
