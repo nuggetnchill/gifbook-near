@@ -6,7 +6,7 @@ export default function Form({ onSubmit, currentUser }) {
   return (
     <form onSubmit={onSubmit}>
       <fieldset id="fieldset">
-        <p>Sign the guest book, { currentUser.accountId }!</p>
+        <p>Welcome, { currentUser.accountId }! Please go to <a href="https://giphy.com/">GIPHY</a>, search for your favorite gif and copy the image URL </p>
         <p className="highlight">
           <label htmlFor="message">Message:</label>
           <input
@@ -15,7 +15,7 @@ export default function Form({ onSubmit, currentUser }) {
             id="message"
             required
           />
-          <label htmlFor="gif">Your favorite gif:</label>
+          <label htmlFor="gif">Image URL:</label>
           <input
             autoComplete="off"
             autoFocus

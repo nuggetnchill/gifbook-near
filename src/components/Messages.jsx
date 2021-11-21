@@ -26,7 +26,7 @@ export default function Messages({ messages }) {
           <p>{message.text}</p>
             {message.donation > 0.01 && (<p> <strong>Donation: </strong> {Number(message.donation/10**24).toFixed(2)}Ⓝ</p>)}
           <p className="time-stamp">{new Date(message.timestamp / 1000000).toLocaleString()}</p>
-          {message.gif && (<img src={message.gif}/ >)}
+          {message.gif && (<img src={message.gif} onError={(event) => event.target.src = 'https://media.giphy.com/media/9muUXOtrd5gpG/giphy-downsized.gif'} />)}
         </div>)
       })}
       </div>
